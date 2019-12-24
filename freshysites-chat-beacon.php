@@ -32,31 +32,27 @@ add_action('wp_dashboard_setup', 'freshy_remove_dashboard_widgets' );
 // End Remove Pressable Dashboard widget
 //
 //Begin enqueue FreshySites Custom Admin dashboard
-function freshysites_enqueue_custom_admin_theme() {
-    wp_enqueue_style( 'freshysites-enqueue-custom-admin-theme', plugins_url( 'wp-admin.css', __FILE__ ) );
+function freshysites_admin_theme() {
+    wp_enqueue_style( 'freshysites-admin-theme', plugins_url( 'wp-admin.css', __FILE__ ) );
 }
-add_action( 'admin_enqueue_scripts', 'freshysites_enqueue_custom_admin_theme' );
+add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
 
 
 //Begin FreshySites Dashboard Widget
-//
-// display featured post thumbnails in WordPress feeds
 
+add_action('wp_dashboard_setup', 'fs_custom_dashboard_widgets');
 
-
-add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
-  
-function my_custom_dashboard_widgets() {
+function fs_custom_dashboard_widgets() {
 global $wp_meta_boxes;
-	unset(  
-          $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'],  
-          $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'],  
-          $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']  
-     );  
- 
+	unset(
+          $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'],
+          $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'],
+          $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']
+     );
+
 wp_add_dashboard_widget('custom_help_widget', 'FreshySites Support', 'custom_dashboard_help');
 }
- 
+
 function custom_dashboard_help() {
 	echo '<br><img src="https://freshysites.com/wp-content/uploads/fs-formal-horizontal.svg">';
 	echo '<p><center><iframe width="100%" height="218" src="https://www.youtube.com/embed/js_-p_d6_FQ?loop=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe></center></p>';
@@ -73,16 +69,16 @@ function custom_dashboard_help() {
 	echo '<hr>';
 	echo '<h3 style="font-weight:700;">Latest from FreshySites</h3>';
 	echo '<hr>';
-	echo '<div class="rss-widget">';  
-     wp_widget_rss_output(array(  
-          'url' => 'https://freshysites.com/feed/',  
-          'title' => 'Whats up at FreshySites',  
-          'items' => 4,  
-          'show_summary' => 0,  
-          'show_author' => 0,  
-          'show_date' => 1   
-     ));  
-     echo "</div>";  
+	echo '<div class="rss-widget">';
+     wp_widget_rss_output(array(
+          'url' => 'https://freshysites.com/feed/',
+          'title' => 'Whats up at FreshySites',
+          'items' => 4,
+          'show_summary' => 0,
+          'show_author' => 0,
+          'show_date' => 1
+     ));
+     echo "</div>";
 }
 function wcs_post_thumbnails_in_feeds( $content ) {
     global $post;
@@ -94,43 +90,41 @@ function wcs_post_thumbnails_in_feeds( $content ) {
 add_filter( 'the_excerpt_rss', 'wcs_post_thumbnails_in_feeds' );
 add_filter( 'the_content_feed', 'wcs_post_thumbnails_in_feeds' );
 
-function dashboard_custom_feed_output() {  
-     
-}  
+function dashboard_custom_feed_output() {
+
+}
 
 //End FreshySites Dashboard Widget
-//
-//
-//
-//
-//Experimental Features
-add_action( 'admin_menu', 'fs_post_info_menu' );
-function fs_post_info_menu(){    
-	$page_title = 'FreshySites Support';   
-	$menu_title = ' FS Support';   
-	$capability = 'manage_options';   
-	$menu_slug  = 'fs-post-info';   
-	$function   = 'fs_support_info_page';   
-	$icon_url   = 'https://griffinpsychiatry-sandbox.mystagingwebsite.com/wp-content/uploads/fs-admin-menu-icon-2.svg';   
-	$position   = 0;    
-	add_menu_page( 
-		$page_title,                  
-		$menu_title,                   
-		$capability,                   
-		$menu_slug,                   
-		$function,                   
-		$icon_url,                   
-		$position ); 
-} 
 
-// All About Updates 
-// 
-// All About Updates 
-// 
-//  Begin Version Control | Auto Aupdate Checker 
+//Experimental Features Commented out for future feature releases
+
+//add_action( 'admin_menu', 'fs_post_info_menu' );
+//function fs_post_info_menu(){
+//	$page_title = 'FreshySites Support';
+//	$menu_title = ' FS Support';
+//	$capability = 'manage_options';
+//	$menu_slug  = 'fs-post-info';
+//	$function   = 'fs_support_info_page';
+//	$icon_url   = 'https://griffinpsychiatry-sandbox.mystagingwebsite.com/wp-content/uploads/fs-admin-menu-icon-2.svg';
+//	$position   = 0;
+//	add_menu_page(
+//		$page_title,
+//	$menu_title,
+//		$capability,
+//		$menu_slug,
+//		$function,
+//		$icon_url,
+//		$position );
+//}
+
+// All About Updates
+//
+// All About Updates
+//
+//  Begin Version Control | Auto Aupdate Checker
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/FreshyMichael/freshy-support/',
+	'https://github.com/FreshyMichael/freshysites-support-beacon',
 	__FILE__,
 	'freshysites-support-beacon'
 );
