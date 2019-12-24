@@ -34,7 +34,7 @@ a{
 }
 a:hover{
 	color:rgb(49, 165, 73);
-	font-weight:700;
+	font-weight:600;
 }
 
 /*Widget Headers */
@@ -84,19 +84,20 @@ a:hover{
     background: rgb(49, 165, 73);
     vertical-align: top;
 } */
+/*
 .wrap .page-title-action:hover{
 	color: white;
     border-color: rgb(49, 165, 73);
-    background: rgb(49, 165, 73);	
+    background: rgb(49, 165, 73);
 }
 .wrap .page-title-action{
 	color: rgb(49, 165, 73);
     border-color: rgb(49, 165, 73);
-    background: none;	
+    background: none;
 }
 
 /* Begin #wpadminbar styling */
-
+/*
 #wpadminbar {
     direction: ltr;
     color: #333;
@@ -146,11 +147,12 @@ a:hover{
 }
 #wpadminbar .ab-top-secondary a{
 	color:#333!important;
-	
+
 }
 /* End #wpadminbar Styling */
 
 /* Admin Menu Styles  */
+/*
 .dashicons { color: red!important; }
 #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
     width: 160px;
@@ -163,7 +165,7 @@ a:hover{
 -moz-border-radius: 0px 0px 200px 0px;
 -webkit-border-radius: 0px 0px 200px 0px;
 
-	
+
 }
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu{
 	background-color: rgb(49, 165, 73);
@@ -171,7 +173,7 @@ a:hover{
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu:hover{
 	background-color: rgba(215, 224, 64, 1.0);
 	color:#333333;
-	
+
 }
 
 #adminmenu .wp-has-current-submenu .wp-submenu{
@@ -192,7 +194,7 @@ a:hover{
 #adminmenu li.current a.menu-top{
 	background:rgb(49, 165, 73)!important;
 	color: white!important;
-	
+
 }
 /*
 #adminmenuwrap::before{
@@ -203,10 +205,11 @@ a:hover{
 	max-height:75px;
 	margin-top:15px;
 	margin-bottom:15px;
-	
+
 } */
 
 /* ***Plugin Page Styles*** */
+/*comment
 .plugins .active td{
 	background:rgba(49, 165, 73, 0.10);
 }
@@ -221,12 +224,13 @@ a:hover{
 }
 
 /*  Start Notice Styles  */
+/*Comment
 .notice-warning.notice-alt {
     background-color: rgba(215,224,64,0.15);
 }
 
 .notice-warning {
-    border-left-color: #d7e040!important;	
+    border-left-color: #d7e040!important;
 }
 
 /* End Notice Syles */
