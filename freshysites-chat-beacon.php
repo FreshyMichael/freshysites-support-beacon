@@ -8,7 +8,7 @@
 * Author URI: https://freshysites.com/
 */
 
-//Begin Admin Only FreshySites Beacon with Chat
+//Begin Admin Enqueue FreshySites Beacon with Chat
 
 function freshy_admin_scripts() {
 
@@ -16,45 +16,44 @@ wp_register_script( 'chat-beacon-javascript', plugins_url('/js/chat-beacon.js' ,
 
 wp_enqueue_script( 'chat-beacon-javascript' );
 
-} // end custom_register_admin_scripts
+} // end freshy_admin_scripts
 
 add_action( 'admin_enqueue_scripts', 'freshy_admin_scripts' );
 
-// End Admin Only Freshysites Beacon with Chat
+// End Admin Enqueue Freshysites Beacon with Chat
 
-// remove Pressable Dashboard widget
-function freshy_remove_dashboard_widgets() {
-    global $wp_meta_boxes;
-    unset($wp_meta_boxes['dashboard']['normal']['core']['pressable_dashboard_widget']);
-}
-
-add_action('wp_dashboard_setup', 'freshy_remove_dashboard_widgets' );
-// End Remove Pressable Dashboard widget
-//
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
     wp_enqueue_style( 'freshysites-admin-theme', plugins_url( 'wp-admin.css', __FILE__ ) );
 }
 add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
 
-
-//Begin FreshySites Dashboard Widget
+//Begin FreshySites Dashboard Widget Custimzations
 
 add_action('wp_dashboard_setup', 'fs_custom_dashboard_widgets');
 
 function fs_custom_dashboard_widgets() {
 global $wp_meta_boxes;
+
+// Begin Unset Dashboard Widgets
+
 	unset(
           $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'],
           $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'],
-          $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']
+          $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'],
+          $wp_meta_boxes['dashboard']['normal']['core']['pressable_dashboard_widget']
      );
+
+// End Unset Dashboard Widgets
+
+// Begin FreshySites Dashboard Widget
 
 wp_add_dashboard_widget('custom_help_widget', 'FreshySites Support', 'custom_dashboard_help');
 }
 
 function custom_dashboard_help() {
-	echo '<br><img src="https://freshysites.com/wp-content/uploads/fs-formal-horizontal.svg">';
+	echo '<br>';
+  echo '<img src= "<?php plugins_url('/assets/fs-formal-horizontal.svg' , __FILE__); ?>">';
 	echo '<p><center><iframe width="100%" height="218" src="https://www.youtube.com/embed/js_-p_d6_FQ?loop=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe></center></p>';
 	echo '<p></p>';
 	echo '<center>';
@@ -105,7 +104,7 @@ function dashboard_custom_feed_output() {
 //	$capability = 'manage_options';
 //	$menu_slug  = 'fs-post-info';
 //	$function   = 'fs_support_info_page';
-//	$icon_url   = 'https://griffinpsychiatry-sandbox.mystagingwebsite.com/wp-content/uploads/fs-admin-menu-icon-2.svg';
+//	$icon_url   = '';
 //	$position   = 0;
 //	add_menu_page(
 //		$page_title,
@@ -118,9 +117,7 @@ function dashboard_custom_feed_output() {
 //}
 
 // All About Updates
-//
-// All About Updates
-//
+
 //  Begin Version Control | Auto Aupdate Checker
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
