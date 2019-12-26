@@ -1,5 +1,5 @@
 === FreshySites Support Beacon ===
-Contributors: FreshySites
+Contributors: FreshySites, Support Team
 Tags: FreshySites, Support Beacon
 Requires at least: 4.6
 Tested up to: 5.3
@@ -22,8 +22,8 @@ Function Addition - Version Control
 Function Addition - Update Check
 
 = 1.0 =
-Initial release. Time for a Support Party!
+Initial release
 
 == Arbitrary section ==
 
-Many thanks to https://github.com/YahnisElsts/ for the Plugin Update Integration included in this plugin! Somebody, buy that man a beer.
+Many thanks to https://github.com/YahnisElsts/ for the Plugin Update Integration included in this plugin! Somebody, buy that man a bag of coffee.
