@@ -53,13 +53,13 @@ wp_add_dashboard_widget('custom_help_widget', 'FreshySites Support', 'custom_das
 
 function custom_dashboard_help() {
 	echo '<br>';
-  echo '<img src= "<?php plugins_url('/assets/fs-formal-horizontal.svg' , __FILE__); ?>">';
+	echo '<img src="' . esc_url( plugins_url( 'assets/fs-formal-horizontal.svg', __FILE__ ) ) . '" > ';
 	echo '<p><center><iframe width="100%" height="218" src="https://www.youtube.com/embed/js_-p_d6_FQ?loop=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe></center></p>';
 	echo '<p></p>';
 	echo '<center>';
-	echo ' <button type="button" class="button button-primary"><a href="https://freshysites.com/team/" target="_blank" style="color:white!important">Our Team</a></button> ' ;
-	echo ' <button type="button" class="button button-primary"><a href="https://kb.freshysites.com" target="_blank" style="color:white!important">Knowledge Base</a></button> ';
-	echo ' <button type="button" class="button button-primary"><a href="https://freshysites.com/support/" target="_blank" style="color:white!important">Contact Support</a></button> ';
+	echo ' <button type="button" class="fs-help-button"><a href="https://freshysites.com/team/" target="_blank" style="color:white!important">Our Team</a></button> ' ;
+	echo ' <button type="button" class="fs-help-button"><a href="https://kb.freshysites.com" target="_blank" style="color:white!important">Knowledge Base</a></button> ';
+	echo ' <button type="button" class="fs-help-button"><a href="https://freshysites.com/support/" target="_blank" style="color:white!important">Contact Support</a></button> ';
 	echo '</center>';
 	echo '<br>';
 	echo '<hr>';
@@ -108,7 +108,7 @@ function dashboard_custom_feed_output() {
 //	$position   = 0;
 //	add_menu_page(
 //		$page_title,
-//	$menu_title,
+//	    $menu_title,
 //		$capability,
 //		$menu_slug,
 //		$function,
