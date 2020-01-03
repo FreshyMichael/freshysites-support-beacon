@@ -16,14 +16,12 @@ Provides access to the FS “How-To” Guides and ability to quickly contact our
 
 == Changelog ==
 
-=2.0.0=
-Function Addition - FS Dashboard Widget
-Function Addition - Version Control
-Function Addition - Update Check
-
-=1.0=
-Initial release - FreshySite Chat Beacon
-
-== Arbitrary section ==
+=2.0.0=<br>
+Function Addition - FS Dashboard Widget<br>
+Function Addition - Version Control<br>
+Function Addition - Update Check<br>
 
 Many thanks to https://github.com/YahnisElsts/ for the Plugin Update Integration included in this plugin! Somebody, buy that man a bag of coffee.
+
+=1.0=<br>
+Initial release - FreshySite Chat Beacon
