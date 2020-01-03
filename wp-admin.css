@@ -25,6 +25,7 @@ textarea:focus {
 .metabox-holder .postbox-container .empty-container {
     border: none;
 }
+/*
 body{
 	background:#ffffff;
 }
@@ -37,14 +38,43 @@ a:hover{
 	font-weight:600;
 }
 
-/*Widget Headers */
-.metabox-holder h2.hndle {
+/*FS Custom Widget Styles */
+#custom_help_widget h2.hndle {
     background: rgb(49, 165, 73);
-	background-image: url(https://griffinpsychiatry-sandbox.mystagingwebsite.com/wp-content/uploads/hero-banner-shapes-v21.svg);
 	background-size: cover;
 	background-position: right center;
 	color:white!important;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#custom_help_widget a {
+	color:rgb(49, 165, 73);
+	text-decoration:none!important;
+}
+
+#custom_help_widget a:hover{
+	color:rgb(49, 165, 73);
+}
+
+#custom_help_widget .toggle-indicator{
+	color:#ffffff;
+}
+/* Custom Help Widget Button Styles */
+
+.fs-help-button{
+	background:#50b849;
+	padding: 5px 15px 5px 15px;
+	border-radius:2px;
+	border:solid 1px #50b849;
+
+}
+.fs-help-button:hover{
+	background:#d7e040;
+	padding: 5px 15px 5px 15px;
+	border-radius:2px;
+	border:solid 1px #d7e040;
+	transition-duration: .5s;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 /*
 .wp-core-ui .button-primary {
