@@ -16,13 +16,13 @@ Provides access to the FS “How-To” Guides and ability to quickly contact our
 
 == Changelog ==
 
-=2.1.0=
+=2.0.0=
 Function Addition - FS Dashboard Widget
 Function Addition - Version Control
 Function Addition - Update Check
 
-= 1.0 =
-Initial release
+=1.0=
+Initial release - FreshySite Chat Beacon
 
 == Arbitrary section ==
 
