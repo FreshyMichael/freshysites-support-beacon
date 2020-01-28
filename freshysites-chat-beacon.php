@@ -58,7 +58,7 @@ function custom_dashboard_help() {
 	echo '<p></p>';
 	echo '<center>';
 	echo ' <button type="button" class="fs-help-button"><a href="https://freshysites.com/team/" target="_blank" style="color:white!important">Our Team</a></button> ' ;
-	echo ' <button type="button" class="fs-help-button"><a href="https://kb.freshysites.com" target="_blank" style="color:white!important">Knowledge Base</a></button> ';
+	echo ' <button type="button" class="fs-help-button"><a href="https://kb.freshysites.com/collection/95-how-to-guides" target="_blank" style="color:white!important">How-To Guides</a></button> ';
 	echo ' <button type="button" class="fs-help-button"><a href="https://freshysites.com/support/" target="_blank" style="color:white!important">Contact Support</a></button> ';
 	echo '</center>';
 	echo '<br>';
