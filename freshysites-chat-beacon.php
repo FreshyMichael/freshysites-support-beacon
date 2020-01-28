@@ -118,7 +118,7 @@ function dashboard_custom_feed_output() {
 
 // All About Updates
 
-//  Begin Version Control | Auto Aupdate Checker
+//  Begin Version Control | Auto Update Checker
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'https://github.com/FreshyMichael/freshysites-support-beacon',
