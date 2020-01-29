@@ -54,7 +54,7 @@ wp_add_dashboard_widget('custom_help_widget', 'FreshySites Support', 'custom_das
 function custom_dashboard_help() {
 	echo '<br>';
 	echo '<img src="' . esc_url( plugins_url( 'assets/fs-formal-horizontal.svg', __FILE__ ) ) . '" > ';
-	echo '<p><center><iframe width="100%" height="218" src="https://www.youtube.com/embed/js_-p_d6_FQ?loop=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe></center></p>';
+	echo '<p><center><iframe width="100%" height="218" src="https://www.youtube.com/embed/eU9FruuFxk4?loop=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe></center></p>';
 	echo '<p></p>';
 	echo '<center>';
 	echo ' <button type="button" class="fs-help-button"><a href="https://freshysites.com/team/" target="_blank" style="color:white!important">Our Team</a></button> ' ;
