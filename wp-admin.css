@@ -40,7 +40,7 @@ a:hover{
 
 /*FS Custom Widget Styles */
 #custom_help_widget h2.hndle {
-    background: rgb(49, 165, 73);
+  background: #31a549;
 	background-size: cover;
 	background-position: right center;
 	color:white!important;
