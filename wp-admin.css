@@ -39,7 +39,7 @@ a:hover{
 }
 
 /*FS Custom Widget Styles */
-#custom_help_widget h2.hndle {
+#fs_support_widget h2.hndle {
   background: #31a549;
 	background-size: cover;
 	background-position: right center;
@@ -47,16 +47,16 @@ a:hover{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#custom_help_widget a {
+#fs_support_widget a {
 	color:rgb(49, 165, 73);
 	text-decoration:none!important;
 }
 
-#custom_help_widget a:hover{
+#fs_support_widget a:hover{
 	color:rgb(49, 165, 73);
 }
 
-#custom_help_widget .toggle-indicator{
+#fs_support_widget .toggle-indicator{
 	color:#ffffff;
 }
 /* Custom Help Widget Button Styles */
@@ -76,7 +76,7 @@ a:hover{
 	transition-duration: .5s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-/*
+/* For later inclusion of an Admin Dashboard Theme | Incomplete
 .wp-core-ui .button-primary {
 	background:rgb(49, 165, 73)!important;
     border-color: rgba(49, 165, 73, 0.85)!important;
