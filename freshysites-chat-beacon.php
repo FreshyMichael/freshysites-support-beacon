@@ -48,10 +48,10 @@ global $wp_meta_boxes;
 
 // Begin FreshySites Dashboard Widget
 
-wp_add_dashboard_widget('custom_help_widget', 'FreshySites Support', 'custom_dashboard_help');
+wp_add_dashboard_widget('fs_support_widget', 'FreshySites Support', 'fs_dashboard_support');
 }
 
-function custom_dashboard_help() {
+function fs_dashboard_support() {
 	echo '<br>';
 	echo '<img src="' . esc_url( plugins_url( 'assets/fs-formal-horizontal.svg', __FILE__ ) ) . '" > ';
 	echo '<p><center><iframe width="100%" height="218" src="https://www.youtube.com/embed/eU9FruuFxk4?loop=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe></center></p>';
