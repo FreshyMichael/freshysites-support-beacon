@@ -1,1 +1,1 @@
-<? //silence is golden
+<? //Silence is Golden
