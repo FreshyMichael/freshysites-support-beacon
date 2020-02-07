@@ -7,7 +7,9 @@
 * Author: FreshySites
 * Author URI: https://freshysites.com/
 */
-
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
 //Begin Admin Enqueue FreshySites Beacon with Chat
 
 function freshy_admin_scripts() {
