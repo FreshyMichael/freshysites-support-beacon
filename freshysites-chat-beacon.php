@@ -3,7 +3,7 @@
 * Plugin Name: FreshySites Support
 * Plugin URI: https://freshysites.com/
 * Description: Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team
-* Version: 2.0.0
+* Version: 2.1.0
 * Author: FreshySites
 * Author URI: https://freshysites.com/
 */
