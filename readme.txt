@@ -8,24 +8,23 @@ Requires PHP: 7.1+
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-== Description ==
+<h2>== Description ==</h2>
 
 Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team.
 
-== Changelog ==
+<h2>== Changelog ==</h2>
 
-= 2.1.0 =
-*
-*Function Addition - Basic Plugin Security - More updates coming soon
-*Error Correction in Widget Function Name
-*
-= 2.0.0 =
-*
-*Function Addition - FS Dashboard Widget
-*Function Addition - Version Control
-*Function Addition - Update Check
-*
-**Many thanks to https://github.com/YahnisElsts/ for the Plugin Update Integration included in this plugin! Somebody, buy that man a bag of coffee.
-*
-= 1.0 =
-*Initial release - FreshySites Chat Beacon
+<h3>= 2.1.0 =</h3>
+<p>Function Addition - Basic Plugin Security - More updates coming soon</p>
+<p>Error Correction in Widget Function Name</p>
+
+<h3>= 2.0.0 =</h3>
+
+<p>Function Addition - FS Dashboard Widget</p>
+<p>Function Addition - Version Control</p>
+<p>Function Addition - Update Check</p>
+
+<p><i>Many thanks to https://github.com/YahnisElsts/ for the Plugin Update Integration included in this plugin! Somebody, buy that man a bag of coffee.</i><p>
+
+<h3>= 1.0 =</h3>
+<p>Initial release - FreshySites Chat Beacon</p>
