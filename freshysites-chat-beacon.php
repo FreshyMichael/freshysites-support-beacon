@@ -4,7 +4,7 @@
 * Plugin URI: https://freshysites.com/
 * Description: Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team
 * Version: 2.1.1
-* Author: FreshySites 
+* Author: FreshySites
 * Author URI: https://freshysites.com/
 */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -81,19 +81,6 @@ function fs_dashboard_support() {
      ));
      echo "</div>";
 }
-function fs_post_thumbnails_in_feeds( $content ) {
-    global $post;
-    if( has_post_thumbnail( $post->ID ) ) {
-        $content = '<p>' . get_the_post_thumbnail( $post->ID ) . '</p>' . $content;
-    }
-    return $content;
-}
-add_filter( 'the_excerpt_rss', 'fs_post_thumbnails_in_feeds' );
-add_filter( 'the_content_feed', 'fs_post_thumbnails_in_feeds' );
-
-function dashboard_custom_feed_output() {
-
-}
 
 //End FreshySites Dashboard Widget
 
@@ -109,13 +96,13 @@ function dashboard_custom_feed_output() {
 //	$icon_url   = '';
 //	$position   = 0;
 //	add_menu_page(
-//		$page_title,
-//	    $menu_title,
-//		$capability,
-//		$menu_slug,
-//		$function,
-//		$icon_url,
-//		$position );
+//	$page_title,
+//	$menu_title,
+//	$capability,
+//	$menu_slug,
+//	$function,
+//	$icon_url,
+//	$position );
 //}
 
 // All About Updates
