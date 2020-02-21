@@ -8,11 +8,17 @@ Requires PHP: 7.1+
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-<h2>== Description ==</h2>
+== Description ==
 
 Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team.
 
 <h2>== Changelog ==</h2>
+
+<h3>= 2.1.2 =</h3>
+<p>Error Fix - duplicate thumbnail inclusion from rss in FS Dashboard Widget</p>
+
+<h3>= 2.1.1 =</h3>
+<p>Updated Repo to meet community standards</p>
 
 <h3>= 2.1.0 =</h3>
 <p>Function Addition - Basic Plugin Security - More updates coming soon</p>
