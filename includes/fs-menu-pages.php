@@ -28,6 +28,9 @@ function fs_admin_menu() {
 	h3{
 		text-size:2.5em;
 	}
+	.error{
+		display:none;
+	}
 	#wpcontent {
 		padding-left:0px !important;
 	}
