@@ -52,13 +52,18 @@ a:hover{
 
 /*FS Custom Widget Styles */
 #fs_support_widget h2.hndle {
-  background: #00B140;
-	background-size: cover;
-	background-position: right center;
 	color:white!important;
+}
+#fs_support_widget .postbox-header{
+	background: #00B140!important;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+#fs_support_widget .handle-order-higher{
+	color:#DBE442!important;
+}
+#fs_support_widget .handle-order-lower{
+	color:#DBE442!important;
+}
 #fs_support_widget a {
 	color:rgb(49, 165, 73);
 	text-decoration:none!important;
