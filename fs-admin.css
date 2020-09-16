@@ -24,12 +24,15 @@ textarea:focus {
 button:focus {outline:0;}
 
 .metabox-holder .postbox-container .empty-container {
-    border: none;
+	border: none;
 }
 
 .BeaconFabButtonFrame.fcy-642v3l.e1b5xbr10{
-display:none!important;
-} 
+	display:none!important;
+}
+.hsds-beacon .iagYwt{
+	display:none!important;
+}
 div#beacon-container .fcy-19yda2i {
 	margin-bottom:-50px;
 }
