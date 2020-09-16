@@ -20,7 +20,7 @@ include 'includes/fs_count_emails_wp.php';
 
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
-    wp_enqueue_style( 'freshysites-admin-theme', plugins_url( 'fs-admin.css', __FILE__ ) );
+    wp_enqueue_style( 'freshysites-admin-theme', plugins_url( 'fs-admin.css?version=3.0.3', __FILE__ ) );
 }
 add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
 
