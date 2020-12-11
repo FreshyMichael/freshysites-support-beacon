@@ -21,9 +21,24 @@ textarea:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+button:focus {outline:0;}
 
 .metabox-holder .postbox-container .empty-container {
-    border: none;
+	border: none;
+}
+
+.BeaconFabButtonFrame.fcy-642v3l.e1b5xbr10{
+	display:none!important;
+}
+.hsds-beacon .iagYwt{
+	display:none!important;
+}
+div#beacon-container .fcy-19yda2i {
+	margin-bottom:-50px;
+}
+
+#adminmenu .wp-menu-image img {
+	max-width:18px;
 }
 /*
 body{
@@ -39,30 +54,35 @@ a:hover{
 }
 
 /*FS Custom Widget Styles */
-#custom_help_widget h2.hndle {
-    background: rgb(49, 165, 73);
-	background-size: cover;
-	background-position: right center;
+#fs_support_widget h2.hndle {
 	color:white!important;
+}
+#fs_support_widget .postbox-header{
+	background: #00B140!important;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
-#custom_help_widget a {
+#fs_support_widget .handle-order-higher{
+	color:#DBE442!important;
+}
+#fs_support_widget .handle-order-lower{
+	color:#DBE442!important;
+}
+#fs_support_widget a {
 	color:rgb(49, 165, 73);
 	text-decoration:none!important;
 }
 
-#custom_help_widget a:hover{
+#fs_support_widget a:hover{
 	color:rgb(49, 165, 73);
 }
 
-#custom_help_widget .toggle-indicator{
+#fs_support_widget .toggle-indicator{
 	color:#ffffff;
 }
 /* Custom Help Widget Button Styles */
 
 .fs-help-button{
-	background:#50b849;
+	background:#00B140;
 	padding: 5px 15px 5px 15px;
 	border-radius:2px;
 	border:solid 1px #50b849;
@@ -76,7 +96,7 @@ a:hover{
 	transition-duration: .5s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-/*
+/* For later inclusion of an Admin Dashboard Theme | Incomplete
 .wp-core-ui .button-primary {
 	background:rgb(49, 165, 73)!important;
     border-color: rgba(49, 165, 73, 0.85)!important;
