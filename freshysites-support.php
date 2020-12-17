@@ -23,29 +23,25 @@ define('PLUGIN_DIR' , dirname(__FILE__).'/');
 include 'includes/fs_count_emails_wp.php';
 include 'includes/fs_support_settings.php';
 
-//Include these file is User is logged in AND is administrator
+//Include these file if the current user can manage options (is admin)
 function fs_adminOnly_functions(){
-	
-	//Get the current user
-	$user = wp_get_current_user();
 
-	//Array of user roles allowed to see plugin's admin functionality
-	$allowed_roles = array('administrator');
-		if ( array_intersect( $allowed_roles, $user->roles )&&(is_user_logged_in())) {
-
+		//If the user cannot manage options, don't setup the support beacon, dashboard widget or the admin menu page
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+		else{
 			//Include the Administrator Only function files
 			include 'includes/fs-dashboard-widget.php';
 			include 'includes/fs-support-beacon.php';
 			include 'includes/fs-menu-pages.php';
 		}
-		else {
-			//Do nothing
-		}
+
 }
 
 //Add the action
-
 add_action ('after_setup_theme' , 'fs_adminOnly_functions');
+    
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
     $dir = plugin_dir_url(__FILE__);
@@ -53,12 +49,10 @@ function freshysites_admin_theme() {
 }
 add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
 
-// All About Updates
-
 //  Begin Version Control | Auto Update Checker
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/FreshyMichael/freshysites-support-beacon',
+	'https://github.com/FreshySitesSupport/freshysites-support-beacon',
 	__FILE__,
 	'freshysites-support-beacon'
 );
@@ -70,6 +64,6 @@ $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 //Future Update Note: Comment in these sections and add token and branch information once private git established
 //
 //
-//$myUpdateChecker->setAuthentication('your-token-here');
+$myUpdateChecker->setAuthentication('64f1767c1100462355552d6b96d55a22f9751b5d');
 //Optional: Set the branch that contains the stable release.
-//$myUpdateChecker->setBranch('stable-branch-name');
+//$myUpdateChecker->setBranch('master');
