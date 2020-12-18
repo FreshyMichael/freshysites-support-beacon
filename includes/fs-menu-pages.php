@@ -2,20 +2,27 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
+add_action( 'admin_menu', 'fs_admin_menu' );
 
 function fs_admin_menu() {
-		add_menu_page(
-			__( 'FS Admin Page', 'my-textdomain' ),
-			__( 'FS Support', 'my-textdomain' ),
-			'manage_options',
-			'fs-admin-page',
-			'fs_admin_page_contents',
-			plugins_url( 'freshysites-support-beacon/includes/assets/fs-icon-180w.svg'),
-			3
-		);
-	}
-
-	add_action( 'admin_menu', 'fs_admin_menu' );
+	add_menu_page( 
+		'FS Admin Page', 
+		'FS Support',
+		'manage_options',
+		'freshysites-support-beacon/includes/fs-menu-pages.php',
+		'fs_admin_page_contents',
+		plugins_url( 'freshysites-support-beacon/includes/assets/FS_Lime_wht.svg'),
+		/*Set Menu Item Order */  3  
+	);
+/*	add_submenu_page(
+		'freshysites-support-beacon/includes/fs-menu-pages.php',
+		'FS Support Options',
+		'FS Support Options',
+		'manage_options',
+		'freshysites-support-beacon/includes/fs_support_settings.php',
+		'fs_support_options_page_html' ); 
+*/
+}
 
 
 	function fs_admin_page_contents() {
@@ -39,11 +46,7 @@ function fs_admin_menu() {
 	}
 	
 	#wpbody-content{
-		min-height:89vh;
-		background-image:url("https://freshysites.com/wp-content/uploads/big-lime-tile-black-3-percent.png");
-		background-size:cover;
-		background-attachment:fixed;
-		background-position:middle;
+		background-color:white;
 	}
 	/* Flex Grid Style */
 	.flex-grid {
@@ -147,11 +150,11 @@ function fs_admin_menu() {
 
 
 <!-- End Admin Page Styles -->
-
+<!--
 <div style="position:fixed;width:100%;min-width:100%;height:75px;background-color:white;padding-top:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
 	<div class="fs-nav-left" style="position:relative; max-width:30%;">
 		
-	<img src="<?php echo plugins_url( '/assets/fs-formal-horizontal.svg', __FILE__ ); ?>" style="max-height:60px; align:left;">
+	<img src="<?php/* echo plugins_url( '/assets/fs-formal-horizontal.svg', __FILE__ ); */?>" style="max-height:60px; align:left;">
 	</div>
 	</div>
 <div id="docsSearch">
@@ -184,11 +187,13 @@ function fs_admin_menu() {
 			   <h3>Account Terms &amp; Information</h3>
                                 <p>Find more about our Support Terms &amp; Account Management Information.</p></div></a>
 </div></center>
+
+-->
 		
 
 	
 
-<!-- Help Desk --><center>
+<!-- Help Desk --><!--<center>
 <h2 class="collection-1"><a class="collection" href="https://kb.freshysites.com/collection/119-help-desk" target="_blank"><center>Help Desk</center></a></h2>
 		<div class="flex-grid">
  
@@ -217,6 +222,12 @@ function fs_admin_menu() {
 	  </div></a>
 </div>
 	</center>
+-->
+<div class="kb_container">
+	<iframe src="https://kb.freshysites.com" width="100%" height="auto" scroll="no">
+	
+</iframe>
+</div>
 
 
 		
