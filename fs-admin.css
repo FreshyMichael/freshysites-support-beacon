@@ -24,12 +24,15 @@ textarea:focus {
 button:focus {outline:0;}
 
 .metabox-holder .postbox-container .empty-container {
-    border: none;
+	border: none;
 }
 
 .BeaconFabButtonFrame.fcy-642v3l.e1b5xbr10{
-display:none!important;
-} 
+	display:none!important;
+}
+.hsds-beacon .iagYwt{
+	display:none!important;
+}
 div#beacon-container .fcy-19yda2i {
 	margin-bottom:-50px;
 }
@@ -52,20 +55,25 @@ a:hover{
 
 /*FS Custom Widget Styles */
 #fs_support_widget h2.hndle {
-  background: #00B140;
-	background-size: cover;
-	background-position: right center;
 	color:white!important;
+}
+#fs_support_widget .postbox-header{
+	background: #00B140!important;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+#fs_support_widget .handle-order-higher{
+	color:#DBE442!important;
+}
+#fs_support_widget .handle-order-lower{
+	color:#DBE442!important;
+}
 #fs_support_widget a {
-	color:rgb(49, 165, 73);
+	color:#00B140;
 	text-decoration:none!important;
 }
 
 #fs_support_widget a:hover{
-	color:rgb(49, 165, 73);
+	color:#00B140;
 }
 
 #fs_support_widget .toggle-indicator{
@@ -88,6 +96,22 @@ a:hover{
 	transition-duration: .5s;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+.kb_container{
+	position: relative;
+    padding-bottom: 75%;
+    height: 100vh;
+    overflow: hidden;
+}
+.kb_container iframe{
+	position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 /* For later inclusion of an Admin Dashboard Theme | Incomplete
 .wp-core-ui .button-primary {
 	background:rgb(49, 165, 73)!important;
