@@ -15,7 +15,8 @@ window.Beacon('init', 'e6022068-33c2-46d5-88d8-74ba6ee09ff4');
 Beacon("navigate", "/ask/");
 });</script>
 		
-   <button style="valign:center;position:fixed;bottom:0;right:100px;clear:both; background-color:#00B140;border:none;border-radius:5px 5px 0px 0px!important;padding:0px 10px 0px 10px;color:white;font-size:15px; line-height:1.9em; cursor:pointer;" onclick="return Beacon('toggle')"><img src="<?php echo plugins_url('freshysites-support-beacon/includes/assets/freshysites-logo-white.png');?>" style="max-height:1.4em; vertical-align: middle; margin-bottom:4px;"> SUPPORT</button>'; <?php
+   <button style="valign:center;position:fixed;bottom:0;right:100px;clear:both; background-color:white;border:none;border-radius:5px 5px 0px 0px!important;padding:0px 10px 0px 10px;color:white;font-size:15px; line-height:1.9em; cursor:pointer; -webkit-box-shadow: 0px 2px 11px 3px rgba(0,0,0,0.15); box-shadow: 0px 2px 11px 3px rgba(0,0,0,0.15);" onclick="return Beacon('toggle')"><img src="<?php echo plugins_url('freshysites-support-beacon/includes/assets/FS_Horizontal_RGB.svg');?>" style=" min-width:125px; vertical-align: middle; margin-bottom:4px; margin-top:4px;"><div>
+	   </div></button> <?php
 } 
  
 add_action('admin_footer', 'fs_body_admin');
