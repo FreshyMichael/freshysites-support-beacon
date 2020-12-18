@@ -40,7 +40,7 @@ function fs_adminOnly_functions(){
 
 //Add the action
 add_action ('after_setup_theme' , 'fs_adminOnly_functions');
-    
+
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
     $dir = plugin_dir_url(__FILE__);
