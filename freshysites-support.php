@@ -90,21 +90,38 @@ function freshysites_admin_theme() {
 }
 add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
 
+
+// Hide Jetpack warnings based on Settings Selection
+
+function fs_hide_jetpack_warning(){
+		$jp_hide_warning = get_option('hide_jetpack_threat_select');
+		
+		if (!empty($jp_hide_warning)) {
+   			foreach ($jp_hide_warning as $key => $option)
+        	$options[$key] = $option;
+		}
+	
+		if ('option1' == $jp_hide_warning[0]){
+			echo '<style> li#wp-admin-bar-jetpack-scan-notice {display:none!important;} </style>';
+		}
+}
+add_action('admin_head' , 'fs_hide_jetpack_warning' );  
+
 //  Begin Version Control | Auto Update Checker
 require 'plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/FreshySitesSupport/freshysites-support-beacon',
+	'https://github.com/FreshyMichael/freshysites-support-beacon/',
 	__FILE__,
 	'freshysites-support-beacon'
 );
 //Enable Releases
-$myUpdateChecker->getVcsApi()->enableReleaseAssets();
+//$myUpdateChecker->getVcsApi()->enableReleaseAssets();
 //Optional: If you're using a private repository, specify the access token like this:
 //
 //
 //Future Update Note: Comment in these sections and add token and branch information once private git established
 //
 //
-$myUpdateChecker->setAuthentication('64f1767c1100462355552d6b96d55a22f9751b5d');
+//$myUpdateChecker->setAuthentication('64f1767c1100462355552d6b96d55a22f9751b5d');
 //Optional: Set the branch that contains the stable release.
 //$myUpdateChecker->setBranch('master');
