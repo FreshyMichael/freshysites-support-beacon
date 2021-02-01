@@ -6,17 +6,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Get Options, and do things
 
-//Hide Jetpack Notice based on Option Selection
-$fs_hide_jetpack_warning = get_option('hide_jetpack_threat_select');
+// Hide Jetpack warnings based on Settings Selection
 
-function hide_jetpack_warnings(){
-	if ('option1' == $fs_hide_jetpack_warning[0]){ // If Yes is Selected
-		echo '<style> li#wp-admin-bar-jetpack-scan-notice{display:none!important;} </style>';
-	}
-	else{ 
-		return; //Return Nothing 
-	}
+function fs_hide_jetpack_warning(){
+		$jp_hide_warning = get_option('hide_jetpack_threat_select');
+		
+		if (!empty($jp_hide_warning)) {
+   			foreach ($jp_hide_warning as $key => $option)
+        	$options[$key] = $option;
+		}
+	
+		if ('option1' == $jp_hide_warning[0]){
+			echo '<style> li#wp-admin-bar-jetpack-scan-notice {display:none!important;} </style>';
+		}
 }
-
-//Add action with admin_head
-add_action('admin_head', 'hide_jetpack_warnings');
+add_action('admin_head' , 'fs_hide_jetpack_warning' );  
