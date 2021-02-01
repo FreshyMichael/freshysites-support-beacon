@@ -20,18 +20,27 @@ function fs_parse_feed($feed_url, $limit = 5) {
     if (empty($items) || !is_array($items)) {
         return;
     }
-    echo '<ul>';
+	echo '<table>';
+    echo '<ul style="list-style-type: none!important;">';
         foreach ($items as $item) {
         ?>
-	<li>
+	<tr>
+		<td>
+			<li style="list-style-type: none!important;">
             <a href="<?php echo esc_url($item->get_permalink()); ?>">
                 <?php echo esc_html($item->get_title()); ?>
-            </a>
-			<span style="float:right"><?php echo $item->get_date('F d'); ?></span>
-        </li>
+				
+            </a></li>
+		</td>
+		<td style="vertical-align: top;">
+			<span><?php echo $item->get_date('F d'); ?></span>
+        
+		</td>
+	</tr>
         <?php
         }
     echo '</ul>';
+	echo '</table>';
 }
 
 //Begin FreshySites Dashboard Widget Custimzations
@@ -59,13 +68,13 @@ wp_add_dashboard_widget('fs_support_widget', 'FreshySites Support' , 'fs_dashboa
 
 function fs_dashboard_support() {
 	echo '<br>';
-	echo '<img src="' . esc_url( plugins_url( '/assets/FS_Horizontal_RGB.svg', __FILE__ ) ) . '" > ';
+	echo '<center><img src="' . esc_url( plugins_url( '/assets/FS_Horizontal_RGB.svg', __FILE__ ) ) . '" style="max-width:200px;" > </center>';
 	echo '<p></p>';
-	echo '<center>';
+	echo '<div id="fs-help-button-container">';
 	echo ' <button type="button" class="fs-help-button"><a href="https://freshysites.com/team/" target="_blank" style="color:white!important">Our Team</a></button> ' ;
 	echo ' <button type="button" class="fs-help-button"><a href="https://kb.freshysites.com/collection/95-how-to-guides" target="_blank" style="color:white!important">How-To Guides</a></button> ';
 	?><button type="button" class="fs-help-button" onclick="return Beacon('toggle')" style="cursor:pointer;"><a style="color:white!important">Contact Support</a></button><?php
-	echo '</center>';
+	echo '</div>';
 	echo '<p></p>';
 	echo '<br>';
 	echo '<h3 style="font-weight:700;">Latest from FreshySites</h3>';
@@ -79,7 +88,7 @@ function fs_dashboard_support() {
           'show_author' => 0,
           'show_date' => 1
      )); */
-	 echo fs_parse_feed('https://freshysites.com/feed/');
+	 echo fs_parse_feed('https://freshysites.com/feed/',5);
      echo "</div>";
 }
 
