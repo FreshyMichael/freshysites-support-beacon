@@ -5,3 +5,7 @@ window.Beacon('init', 'e6022068-33c2-46d5-88d8-74ba6ee09ff4');
 
 Beacon("navigate", "/ask/");
 });
+
+function toggler(divId) {
+    $("#" + divId).toggle('slow');
+}
