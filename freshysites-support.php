@@ -3,7 +3,7 @@
 * Plugin Name: FreshySites Support
 * Plugin URI: https://freshysites.com/
 * Description: Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team
-* Version: 3.1.0
+* Version: 3.1.1
 * Author: FreshySites
 * Author URI: https://freshysites.com/
 */
@@ -86,26 +86,9 @@ if ( is_plugin_active( 'blogvault-real-time-backup/blogvault.php' ) ) {
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
     $dir = plugin_dir_url(__FILE__);
-    wp_enqueue_style('freshysites-admin-theme', $dir . '/fs-admin.css', array(), '3.1.0', 'all');
+    wp_enqueue_style('freshysites-admin-theme', $dir . '/fs-admin.css', array(), '3.1.1', 'all');
 }
 add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
-
-
-// Hide Jetpack warnings based on Settings Selection
-
-function fs_hide_jetpack_warning(){
-		$jp_hide_warning = get_option('hide_jetpack_threat_select');
-		
-		if (!empty($jp_hide_warning)) {
-   			foreach ($jp_hide_warning as $key => $option)
-        	$options[$key] = $option;
-		}
-	
-		if ('option1' == $jp_hide_warning[0]){
-			echo '<style> li#wp-admin-bar-jetpack-scan-notice {display:none!important;} </style>';
-		}
-}
-add_action('admin_head' , 'fs_hide_jetpack_warning' );  
 
 //  Begin Version Control | Auto Update Checker
 require 'plugin-update-checker/plugin-update-checker.php';
