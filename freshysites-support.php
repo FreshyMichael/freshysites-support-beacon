@@ -3,7 +3,7 @@
 * Plugin Name: FreshySites Support
 * Plugin URI: https://freshysites.com/
 * Description: Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team
-* Version: 3.1.0
+* Version: 3.0.7
 * Author: FreshySites
 * Author URI: https://freshysites.com/
 */
@@ -20,13 +20,14 @@ define('PLUGIN_DIR' , dirname(__FILE__).'/');
 
 //Include these files always
 include 'includes/fs_count_emails_wp.php';
-//include 'includes/fs_support_settings.php';
+include 'divi_object_cache_snippet.php';
+include 'includes/fs_support_settings.php';
 
 //Include these file if the current user can manage options (is admin)
 function fs_adminOnly_functions(){
 
 		//If the user cannot manage options, don't setup the support beacon, dashboard widget or the admin menu page
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! current_user_can( 'manage_options' )) {
 			return;
 		}
 		else{
@@ -38,9 +39,50 @@ function fs_adminOnly_functions(){
 
 }
 
+
+
 //Add the action
 add_action ('after_setup_theme' , 'fs_adminOnly_functions');
 
+/* Hide Blogvault from non @freshysites.com Users */
+
+// Check if Blogvault plugin is active
+if ( is_plugin_active( 'blogvault-real-time-backup/blogvault.php' ) ) {
+	// hide it from the Plugin list
+	add_filter('all_plugins', 'fs_remove_blogvault_admin_plugin_list');
+	function fs_remove_blogvault_admin_plugin_list($plugins) {
+		// get current User
+		$user = wp_get_current_user(); 
+		// get their email address
+		$email = $user->user_email;
+		// check the email's domain
+		$domain = 'freshysites.com';
+		// check if email address matches domain list
+		$banned = strpos($email, $domain) === false;
+		// if current user's email addess doesn't match domain list, then hide the menu items
+		if( $user && $banned ) {
+			unset($plugins['blogvault-real-time-backup/blogvault.php']);
+		}
+		return $plugins;
+	}
+	// hide it from the Admin menu
+	add_action('admin_menu', 'fs_remove_blogvault_admin_menu_links', 999);
+	function fs_remove_blogvault_admin_menu_links() {
+		// get current User
+		$user = wp_get_current_user(); 
+		// get their email address
+		$email = $user->user_email;
+		// check the email's domain
+		$domain = 'freshysites.com';
+		// check if email address matches domain list
+		$banned = strpos($email, $domain) === false;
+		// if current user's email address doesn't match domain list, then hide the menu items
+		if( $user && $banned ) {
+			remove_menu_page('bvbackup');
+		}
+	}
+}
+    
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
     $dir = plugin_dir_url(__FILE__);
