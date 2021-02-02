@@ -46,6 +46,9 @@ add_action ('after_setup_theme' , 'fs_adminOnly_functions');
 
 /* Hide Blogvault from non @freshysites.com Users */
 
+function fs_check_blogvault_is_active() {
+
+
 // Check if Blogvault plugin is active
 if ( is_plugin_active( 'blogvault-real-time-backup/blogvault.php' ) ) {
 	// hide it from the Plugin list
@@ -82,6 +85,8 @@ if ( is_plugin_active( 'blogvault-real-time-backup/blogvault.php' ) ) {
 		}
 	}
 }
+}
+add_action( 'admin_init', 'fs_check_blogvault_is_active' );	
     
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
