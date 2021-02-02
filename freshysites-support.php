@@ -3,7 +3,7 @@
 * Plugin Name: FreshySites Support
 * Plugin URI: https://freshysites.com/
 * Description: Provides access to the FS “How-To” Guides and ability to quickly contact our Support Team
-* Version: 3.1.1
+* Version: 3.1.2
 * Author: FreshySites
 * Author URI: https://freshysites.com/
 */
@@ -91,7 +91,7 @@ add_action( 'admin_init', 'fs_check_blogvault_is_active' );
 //Begin enqueue FreshySites Custom Admin dashboard
 function freshysites_admin_theme() {
     $dir = plugin_dir_url(__FILE__);
-    wp_enqueue_style('freshysites-admin-theme', $dir . '/fs-admin.css', array(), '3.1.1', 'all');
+    wp_enqueue_style('freshysites-admin-theme', $dir . '/fs-admin.css', array(), '3.1.2', 'all');
 }
 add_action( 'admin_enqueue_scripts', 'freshysites_admin_theme' );
 
